@@ -9,6 +9,7 @@ _build
 build/
 dist/
 
+*.log
 
 *.pkl
 *.hd5
