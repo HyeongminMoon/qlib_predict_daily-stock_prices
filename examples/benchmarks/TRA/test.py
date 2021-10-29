@@ -57,7 +57,7 @@ model = init_instance_by_config(config["task"]["model"])
 # In[5]:
 
 
-state_dict = torch.load("/home/qlib_test/examples/benchmarks/TRA/output/nasdaq/model.bin", map_location="cpu")["model"]
+state_dict = torch.load("/home/qlib_test/examples/benchmarks/TRA/output/us_158_nassp_epoch100/model.bin", map_location="cpu")["model"]
 
 
 # In[6]:
