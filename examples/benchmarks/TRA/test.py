@@ -112,7 +112,7 @@ for idx in indexs:
     if type(reset_df.loc[idx]['score']) is np.float32:
         stack = reset_df.loc[idx]
     else:
-        stack = reset_df.loc[idx].sort_values(by='score' , ascending=False)
+        stack = reset_df.loc[idx].sort_values(by='score' , ascending=True)
     stack.to_csv('/home/results/'+str(idx)+'.csv', sep=',', na_rep='NaN')
     # input()
     # clear_output()
