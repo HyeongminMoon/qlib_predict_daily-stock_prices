@@ -81,7 +81,7 @@ pred = model.predict(latest_dataset)
 # In[9]:
 
 
-latest_dataset.to_pickle(path="/home/us_dataset.pkl")
+# latest_dataset.to_pickle(path="/home/us_dataset.pkl")
 
 
 # In[10]:
@@ -105,15 +105,15 @@ import numpy as np
 indexs = reset_df.index.drop_duplicates()
 cnt = 0 
 
-for idx in indexs:
+for idx in indexs[-1:]:
     # cnt+=1
     # if cnt < 800: continue
     print(idx)
     if type(reset_df.loc[idx]['score']) is np.float32:
         stack = reset_df.loc[idx]
     else:
-        stack = reset_df.loc[idx].sort_values(by='score' , ascending=True)
-    stack.to_csv('/home/results/'+str(idx)+'.csv', sep=',', na_rep='NaN')
+        stack = reset_df.loc[idx].sort_values(by='score' , ascending=False)
+    stack.to_csv('/home/results_2021_11/'+str(idx)+'.csv', sep=',', na_rep='NaN')
     # input()
     # clear_output()
 
@@ -121,7 +121,7 @@ for idx in indexs:
 # In[14]:
 
 
-reset_df.to_pickle(path="/home/reset_df.pkl")
+# reset_df.to_pickle(path="/home/reset_df.pkl")
 
 
 # In[ ]:
